@@ -32,6 +32,10 @@
     font-family: "Roboto_Mono_regular";
     src: url("fonts/Roboto_Mono/static/RobotoMono-Regular.ttf");
 }
+@font-face {
+    font-family: "Incosolata_regular";
+    src: url("fonts/Incosolata/static/Inconsolata-Regular.ttf");
+}
 
 * {
     margin: 0px;
@@ -62,7 +66,7 @@ html {
 }
 
 section {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     color: white;
     padding: 20px;
     display: none;
@@ -377,13 +381,18 @@ section {
 }
 .grid-item_forContacts {
     padding: 10px;
-    border: 1px solid white;
+    /* border: 1px solid white; */
 }
 @media (max-width: 700px) {
     .grid-container_forContacts {
         grid-template-columns: auto;
         grid-template-rows: auto; 
     }
+}
+
+.contacts_contents small {
+    font-family: "Incosolata_regular";
+    margin: 0 10px 0 10px;
 }
 
 /* Contacts ================= end */

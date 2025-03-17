@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/fontawesome/css/all.css" />
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/borders.css" />
 
 
 </head>
@@ -59,7 +60,7 @@
                     I start writing code since Senior-High 2017 &#8594; <span style="color: #38d1ef;">C++, Visual Basic, and Computer Hardware. </span>
                 </li>
                 <li>
-                    On my college I discover &#8594; <span style="color: #38d1ef;">C++, Python, Networking and Web Developement (HTML, CSS, JavaScript, SQL, PHP)</span> the rest is self learning.
+                    In college, I learn discover &#8594; <span style="color: #38d1ef;">C++, Python, Networking and Web Developement (HTML, CSS, JavaScript, SQL, PHP);</span> the rest is self-learning.
                 </li>
                 <li>
                     My love for coding and creating programs shines through.
@@ -93,26 +94,38 @@
             <h1>Projects</h1>
             <br>
             <div class="grid-container">
-                <div class="grid-item">
+                <div class="grid-item" onclick="openLinkNewTab('link1')">
                     <img src="assets/img/projects_img/id_builder.png" alt="ID-Builder-img">
                     <div align="left" class="headTitle_projects">ID Builder</div>
                     <p align="left" class="description_projects">
                         Design for a specific organization; no design experience needed. Just tap and select photos in seconds!
                     </p>
+                    <a id="link1" href="https://id-builder.vercel.app" hidden></a>
+                    <div class="overlay">
+                        <div class="text">Open demo</div>
+                    </div>
                 </div>
-                <div class="grid-item">
+                <div class="grid-item" onclick="openLinkNewTab('link2')">
                     <img src="assets/img/projects_img/neru_coffee_shop.png" alt="ID-Builder-img">
                     <div align="left" class="headTitle_projects">Neru Coffee Shop</div>
                     <p align="left" class="description_projects">
                         A clean and modern coffee shop template with product prices, designed for a seamless online café experience.
                     </p>
+                    <a id="link2" href="https://neru-coffee-shop.vercel.app" hidden></a>
+                    <div class="overlay">
+                        <div class="text">Open demo</div>
+                    </div>
                 </div>
-                <div class="grid-item">
+                <div class="grid-item"  onclick="openLinkNewTab('link3')">
                     <img src="assets/img/projects_img/compute_electric_bill.png" alt="ID-Builder-img">
                     <div align="left" class="headTitle_projects">Compute Electric Bill</div>
                     <p align="left" class="description_projects">
                         Easy to compute your estimated electric bill online!
                     </p>
+                    <a id="link3" href="https://compute-electric-bill.vercel.app/" hidden></a>
+                    <div class="overlay">
+                        <div class="text">Open demo</div>
+                    </div>
                 </div>
             </div>            
         </div>
@@ -348,6 +361,14 @@
 
             // close navbar toggle menu
             toggleMenu();
+        }
+
+        // open link based on ID set
+        function openLinkNewTab(linkId) {
+            const link = document.getElementById(linkId);
+            if (link) {
+                window.open(link.href, '_blank'); // Opens in a new tab
+            }
         }
 </script>
 </html>

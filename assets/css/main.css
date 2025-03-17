@@ -73,7 +73,7 @@ section {
 }
 
 /* main page/section */
-#home {
+#projects {
     display: block;
 }
 
@@ -239,11 +239,42 @@ section {
     border: 1px solid white;
     font-size: 20px;
     border-radius: .75rem;
+    cursor: pointer;
+    position: relative;
 }
 .grid-item img {
     width: 100%;
     border-radius: .75rem;
 }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #272829;
+    border-radius: .75rem;
+}
+.grid-item:hover .overlay {
+    opacity: 0.8;
+}
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
 .headTitle_projects {
     font-family: "Montserrat_regular";
     margin-top: 10px;

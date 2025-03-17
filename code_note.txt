@@ -1,0 +1,144 @@
+
+==============================================================================================================
+-- Flex is overiding the width
+==============================================================================================================
+--------------
+# Example code:
+--------------
+        <style> 
+            #main {
+            width: 700px;
+            height: 300px;
+            border: 1px solid black; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            }
+
+            #main div {
+            flex: 1;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            width: 50px;                /* Added */
+            }
+        </style>
+
+        <div id="main">
+            <div style="background-color:coral;min-hei{ght:30px;">RED</div>
+            <div style="background-color:lightblue;min-height:50px;">BLUE</div>  
+            <div style="background-color:lightgreen;mi}n-height:190px;">Green div with more content.
+        </div>
+
+---------
+# CAUSE
+---------
+
+flex: 1; is overiding the width:
+    - flex: 1; makes each <div> inside #main take equal available space, ignoring width: 50px;
+    - To fix this, remove flex: 1; or use flex: 0 0 50px; instead (this means "don't grow, don't shrink, and keep a fixed width of 50px").
+
+--------------
+# FINAL FIX
+--------------
+        #main div {
+        flex: 0 0 50px;             /* Prevents flexbox from overriding width */
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        }
+
+-----------------
+# How it Works?
+-----------------
+
+The shorthand flex: 0 0 50px; is a combination of three properties:
+
+        flex: <flex-grow> <flex-shrink> <flex-basis>;
+
+Here's what each value does:
+
+1. 0 (flex-grow) → The element will not grow beyond its specified width (even if there's extra space available).
+2. 0 (flex-shrink) → The element will not shrink (even if there’s not enough space).
+3. 50px (flex-basis) → The initial size of the element is set to 50 pixels.
+
+Why it works:
+
+* flex: 1; (which you originally had) made the <div>s expand to fill the available space equally.
+* flex: 0 0 50px; forces each <div> to be exactly 50px wide, ignoring extra space or constraints.
+
+Example Behavior:
+
+Before (with flex: 1;):
+Each <div> stretches to take an equal share of the available space inside #main.
+
+After (with flex: 0 0 50px;):
+Each <div> is locked at 50px wide, regardless of how much space is available.
+
+
+########################################################################################################################
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+########################################################################################################################
+
+SCRIPT
+
+        // Scroll to the top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+- will scroll top of the website
+
+########################################################################################################################
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+########################################################################################################################
+
+CSS / STYLE
+
+        /* automatic scaling size */
+        .about-content h1 {
+            font-size: clamp(16px, 5vw, 35px);
+        }
+
+########################################################################################################################
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+########################################################################################################################
+
+CSS Reduce width while width is reduced.
+
+.projects_boxs img {
+    max-width: 500px;
+    height: 266px; /* Maintain original aspect ratio */
+    aspect-ratio: 1080 / 566; /* Original width / height */
+}

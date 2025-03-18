@@ -11,7 +11,7 @@
     <link rel="icon" type="image/x-icon" href="assets/img/tabLogo.png ">
     <link rel="stylesheet" href="assets/fontawesome/css/all.css" />
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.min.css" />
 
 
 </head>
@@ -321,84 +321,7 @@
     #
     #########################################################################################################################################
     -->
-
+    <script src="assets/js/main.min.js"></script>
 </body>
-<script>
-        // Navbar : Menu Toggle
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
 
-        // Navbar : Active link on
-        function setActive(element) {
-            document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
-            element.classList.add('active');
-        }
-
-        // Reload page to reset from first load of page
-        // window.onload = function() {
-        //     // Remove active class from all links
-        //     document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
-
-        //     // Reset URL to Home section
-        //     if (window.location.hash !== "#home") {
-        //         window.location.hash = "#home";
-        //     }
-        // };
-
-
-        function showSection(sectionId) {
-            // close all sections
-            document.getElementById('home').style.display = 'none';
-            document.getElementById('skills').style.display = 'none';
-            document.getElementById('projects').style.display = 'none';
-            document.getElementById('contacts').style.display = 'none';
-
-            // Display only selected
-            document.getElementById(sectionId).style.display = 'block';
-
-            // close navbar toggle menu
-            toggleMenu();
-        }
-
-        // open link based on ID set
-        function openLinkNewTab(linkId) {
-            const link = document.getElementById(linkId);
-            if (link) {
-                window.open(link.href, '_blank'); // Opens in a new tab
-            }
-        }
-
-
-        // Add Security functions ==============================================================
-        // Disable right click on web
-        var el_up = document.getElementById("GFG_UP");
-        var el_down = document.getElementById("GFG_DOWN");
-        
-        function gfg_Run() {
-            document.addEventListener('contextmenu',
-                event => event.preventDefault()
-            );
-        } 
-
-        
-
-        //Prevent Ctrl+S (and Ctrl+W for old browsers and Edge)
-        document.onkeydown = function (e) {
-            e = e || window.event;   //Get event
-
-            if (!e.ctrlKey) return;
-
-            var code = e.which || e.keyCode;//Get key code
-
-            switch (code) {
-                case 83:   //Block Ctrl+S
-                case 85:   //Block Ctrl+U
-                    e.preventDefault();
-                    e.stopPropagation();
-                    break;
-            }
-        };
-</script>
 </html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Login page</title>
+    <!-- Tab Icon -->
+    <link rel="icon" type="image/x-icon" href="img/loginIcon.png">
+
+    <!-- JQuery v3 -->
+    <script type="text/javascript" src="JQuery/JQuery_v3.js"></script>
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="myStyle.css" />
+    <!-- Bootstrap v4.6.2 -->
+    <link rel="stylesheet" href="bootstrap-4.6.2-dist/css/bootstrap.min.css" />
+    <!-- Font Awesome v6.3.0 -->
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+</head>
+<body id="bodyStyle" onload="gfg_Run()"> 
+
+    <div style="color: white; text-align: center; margin-bottom: 20px;">
+        <h1>Title Here</h1>
+    </div>
+
+    <form action="#" method="POST" class="center-loginContainer">
+        <h3 style="text-align: center;">LOGIN</h3>
+
+        <!-- Email -->
+        <div style="position: relative;">
+            <input type="text" class="form-control shadow-none" placeholder="Email" style="padding-left: 35px;">
+            <!-- icon -->
+            <span style="color: #272727; position: absolute; left: 0; top: 0; padding: 5px 10px;"><i class="fa-solid fa-user"></i></span>
+        </div>
+
+        <br>
+
+        <!-- Password -->
+        <div style="position: relative;">
+            <input type="password" id="password" class="form-control shadow-none" placeholder="Password" style="padding-left: 35px; padding-right: 35px;">
+            <!-- icon -->
+            <span style="color: #272727; position: absolute; left: 0; top: 0; padding: 5px 10px;"><i class="fa-solid fa-lock"></i></span>
+            <!-- eye icon / show password btn -->
+            <span id="v_pass" onclick="tog_pass()"  style="color: #272727; position: absolute; right: 0; top: 2px; padding: 5px 10px; cursor: pointer;"><i class="fa-solid fa-eye"></i></span>
+            <span id="h_pass" onclick="tog_pass()"  style="color: #272727; position: absolute; right: 0; top: 2px; padding: 5px 10px; cursor: pointer;"><i class="fa-solid fa-eye-slash"></i></span>
+        </div>
+
+        <br>
+
+        <!-- Login Button -->
+        <button type="button" onclick="alert('This is Design only.');">Login</button>
+
+    </form>
+
+</body>
+<footer>
+    <!-- Popper | If using Popper you need JQuery as well. Should be top of Bootstrap -->
+    <script type="text/javascript" src="../assets/js/popperjs.js"></script>
+
+    <!-- Bootstrap v4.6.2 Script -->
+    <script type="text/javascript" src="bootstrap-4.6.2-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        v_pass.style.display = "none";
+        function tog_pass() {
+            var x = document.getElementById("password");
+                if (x.type === "password") {
+                    x.type = "text"; // show password
+                    v_pass.style.display = "block";
+                    h_pass.style.display = "none";
+                } else {
+                    x.type = "password"; // hide password
+                    v_pass.style.display = "none";
+                    h_pass.style.display = "block";
+            }
+        }
+
+
+
+
+
+
+
+        // Disable right click on web
+        var el_up = document.getElementById("GFG_UP");
+        var el_down = document.getElementById("GFG_DOWN");
+        
+        function gfg_Run() {
+            document.addEventListener('contextmenu',
+                event => event.preventDefault()
+            );
+            el_down.innerHTML = "Right click disabled";
+        }  
+
+
+
+
+        // Prevent Keys
+        document.addEventListener("keydown", function (event){
+            if(event.keyCode == 123){		// prevent F12
+                event.preventDefault();
+            }
+        });
+
+
+
+        //Prevent Ctrl+S (and Ctrl+W for old browsers and Edge)
+        document.onkeydown = function (e) {
+            e = e || window.event;   //Get event
+
+            if (!e.ctrlKey) return;
+
+            var code = e.which || e.keyCode;//Get key code
+
+            switch (code) {
+                case 83:   //Block Ctrl+S
+                case 85:   //Block Ctrl+U
+                    e.preventDefault();
+                    e.stopPropagation();
+                    break;
+            }
+        };
+    </script>   
+</footer>
+</html>

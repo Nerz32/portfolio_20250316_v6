@@ -1,0 +1,225 @@
+/*Font style*/
+.txtcolor1 {
+  font-family: "Arial, Helvetica, sans-serif";
+  color: black;
+  font-size: 30px;
+}
+
+
+
+.txt {
+  font-family: "Arial, Helvetica, sans-serif";
+  font-size: 18px;
+}
+
+/*profile logo*/
+.pfp {
+	border-radius: 100px;
+}
+
+
+/*use for background: */
+.fit {
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+
+
+}
+
+/*Green img*/
+.imgset {
+	width: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 18px;
+
+/*border style*/
+	border: 2px solid #ddd;
+	padding: 5px;
+	opacity: 0.9
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+
+/*Horizontal line*/
+hr.hrdown {
+	border: 3px solid white;
+	border-radius: 13px 13px 13px 13px;
+	opacity: 0.6;
+	padding: 3px;
+	width: 97%;
+}
+
+/*Jumbotron edit/adjusting*/
+.jumbotron {
+	opacity: 0.7
+
+}
+
+/*text*/
+
+h1.display-4 {
+	opacity: 1
+}
+}
+
+/*Profile==================================*/
+
+.profile {
+	width: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10px;
+
+/*border style*/
+	border: 2px solid #ddd;
+	padding: 5px;
+	opacity: 0.9
+}
+
+
+/*Boxes*/
+
+.container-b1 {
+  position: relative;
+  max-width: 450px; /* Maximum width */
+  margin: 0 auto; /* Center it */
+  border: 3px solid white;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 5px 5px 8px white;
+  margin-top: 50px
+}
+
+.container-b1 .content-b1 {
+  position: absolute; /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  width: 100%; /* Full width */
+  padding: 10px; /* Some padding */
+  border-radius: 0px 0px 10px 10px;
+  
+}
+
+/*Galler==================================================*/
+.gallery {
+	width: auto;
+	height: 200px;
+	align-self: left;
+	margin-left: 25px;
+	margin-right: auto;
+	margin-top: 20px;
+	border-radius: 10px;
+
+/*border style*/
+	border: 2px solid #ffd700;
+	padding: 5px;
+	opacity: 1
+}
+
+.photos {
+	width: auto;
+	height: 200px;
+	align-self: left;
+	margin-left: 25px;
+	margin-right: auto;
+	margin-top: 10px;
+	border-radius: 20px;
+
+/*border style*/
+	border: 2px solid #ffdb58;
+	padding: 5px;
+	opacity: 1
+
+}
+
+/*Horizontal line*/
+hr.hrgallery {
+	border: 3px solid #e5b73b;
+	border-radius: 13px 13px 13px 13px;
+	opacity: 0.6;
+	padding: 0px;
+	width: 97%;
+}
+
+/*Anime list=======================================================*/
+.animelist {
+	width: auto;
+	height: 100px;
+	align-self: left;
+	margin-left: 25px;
+	margin-right: auto;
+	margin-top: 20px;
+	border-radius: 10px;
+
+/*border style*/
+	border: 2px solid #FF1493;
+	padding: 5px;
+	opacity: 1
+}
+
+.animecollection {
+	width: auto;
+	height: 200px;
+	align-self: left;
+	margin-left: 25px;
+	margin-right: auto;
+	margin-top: 10px;
+	border-radius: 20px;
+
+/*border style*/
+	border: 2px solid #DADADA;
+	padding: 5px;
+	opacity: 1
+
+}
+
+/*Boxes #2*/
+
+.container-fa {
+  position: relative;
+  max-width: 300px; /* Maximum width */
+  max-height: 500px;
+  margin: 0 auto; /* Center it */
+  border: 3px solid white;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 5px 5px 8px white;
+  margin-top: 50px
+}
+
+.container-fa .content-fa {
+  position: absolute; /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  width: 100%; /* Full width */
+  padding: 10px; /* Some padding */
+  border-radius: 0px 0px 10px 10px;
+  
+}
+
+/*Socials*/
+
+.fb {
+	width: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 18px;
+
+/*border style*/
+	border: 2px solid white;
+	padding: 5px;
+	opacity: 0.9
+}

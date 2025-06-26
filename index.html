@@ -1,6 +1,4 @@
-<script>
-  import { Analytics } from '@vercel/analytics/next';
-</script>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +30,6 @@
     <link rel="stylesheet" href="assets/css/main.min.css" />
   </head>
   <body onload="gfg_Run()">
-    <Analytics />
     <!--
     #########################################################################################################################################
     #
@@ -415,5 +412,9 @@
     #########################################################################################################################################
     -->
     <script src="assets/js/main.min.js"></script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
   </body>
 </html>

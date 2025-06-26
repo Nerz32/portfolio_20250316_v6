@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://ronnelmacompas-dev.vercel.app/sitemap.xml

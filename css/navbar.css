@@ -1,0 +1,63 @@
+
+@font-face {
+    font-family: "Prompt_regular";
+    src: url("../assets/fonts/Prompt/Prompt-Regular.ttf");
+}
+
+.navbar {
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    width: 100%;
+    /* horizon, vertical, blur, color, radius */
+    box-shadow: 0px 10px 45px 5px rgba(255, 255, 255, 0.1);
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+.nav-links li {
+    margin: 0 10px;
+}
+.nav-links a {
+    color: white;
+    font-family: "Prompt_regular";
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #38d1ef;
+}
+.nav-links a.active {
+    color: #38d1ef;
+}
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        text-align: right;
+        padding-right: 20px;
+        background: #333;
+        font-size: 18px;
+        z-index: 2;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}

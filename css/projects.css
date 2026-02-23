@@ -1,0 +1,121 @@
+
+@font-face {
+    font-family: "Orbitron_regular";
+    src: url("../assets/fonts/Orbitron/Orbitron-Regular.ttf");
+}
+@font-face {
+    font-family: "Montserrat_regular";
+    src: url("../assets/fonts/Montserrat/static/Montserrat-Regular.ttf");
+}
+@font-face {
+    font-family: "Kanit_extra_light";
+    src: url("../assets/fonts/Kanit/Kanit-ExtraLight.ttf");
+}
+
+#projects {
+    place-items: center;
+    padding-top: 50px;
+    display: grid;
+}
+#projects h1 {
+    font-family: "Orbitron_regular";
+    font-size: clamp(20px, 6vw, 50px);
+    color: #38d1ef;
+    letter-spacing: 2px; 
+}
+.projects_contents {
+    width: 80%;
+    /* border: 1px solid white; */
+}
+@media (max-width: 900px) {
+    .projects_contents {
+        width: 90%;
+    }
+}
+@media (max-width: 400px) {
+    .projects_contents {
+        width: 95%;
+    }
+}
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, auto);  /* 2 rows */
+    gap: 20px; /* Space between grid items */
+    padding: 10px;
+    text-align: center;
+}
+
+.grid-item {
+    padding: 20px;
+    border: 1px solid white;
+    font-size: 20px;
+    border-radius: .75rem;
+    cursor: pointer;
+    position: relative;
+}
+.grid-item img {
+    width: 100%;
+    border-radius: .75rem;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #272829;
+    border-radius: .75rem;
+}
+.grid-item:hover .overlay {
+    opacity: 0.8;
+}
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.headTitle_projects {
+    font-family: "Montserrat_regular";
+    margin-top: 10px;
+    font-size: 25px;
+}
+.description_projects {
+    font-family: "Kanit_extra_light";
+    font-size: 16px;
+}
+
+/* 🔥 Responsive Design 🔥 */
+@media (max-width: 700px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Stack items in 1 column */
+        grid-template-rows: auto; 
+    }
+}
+
+.glow_border {
+    transition: 
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+.glow_border:hover {
+    border-color: #38d1ef;
+    box-shadow: 0 0 8px #38d1ef,
+                0 0 20px #38d1ef,
+                0 0 35px #38d1ef;
+}

@@ -1,0 +1,55 @@
+
+@font-face {
+    font-family: "Orbitron_regular";
+    src: url("../assets/fonts/Orbitron/Orbitron-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Kanit_light";
+    src: url("../assets/fonts/Kanit/Kanit-Light.ttf");
+}
+
+#home {
+    place-items: center;
+    padding-top: 50px;
+    display: grid;
+}
+.home_contents {
+    width: 80%;
+    /* border: 1px solid white; */
+}
+.home_contents h1 {
+    font-family: "Orbitron_regular";
+    font-size: clamp(20px, 6vw, 50px);
+    color: #38d1ef;
+    letter-spacing: 2px;
+}
+.home_contents p {
+    font-family: "Kanit_light";
+    font-size: 18px;
+}
+.about_list {
+    list-style-type: square;
+    margin-left: 22px;
+}
+
+.about_list li {
+    font-family: "Kanit_light";
+    font-size: clamp(16px, 5vw, 18px);
+    color: #FFFFFF;
+}
+@media (max-width: 772px) {
+    .home_br_2 {
+        display: none;
+    }
+}
+@media (max-width: 556px) {
+    .home_br_1 {
+        display: none;
+    }
+}
+@media (max-width: 800px) {
+    .home_contents {
+        width: 90%;
+    }
+}

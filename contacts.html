@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="author" content="Ronnel Macompas" />
+    <meta name="description" content="Hi, I'm Neru — a freelance web developer and programmer. Explore my portfolio of responsive websites, web apps, and automation tools built with HTML, CSS, JavaScript, PHP, and more." />
+    <meta name="keywords" content="web development, web developer, portfolio, freelancer, neru web developer"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:title" content="Neru Programmer - Portfolio" />
+    <meta property="og:description" content="Hi, I'm Neru — a freelance web developer and programmer." />
+    <meta property="og:image" content="https://ronnelmacompas-dev.vercel.app/assets/img/custom_og_img.png" />
+    <meta property="og:url" content="https://ronnelmacompas-dev.vercel.app/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ronnel_x214"> <!-- Your Twitter username -->
+    <meta name="twitter:title" content="Neru Web Portfolio">
+    <meta name="twitter:description" content="Explore my work as a freelance web developer. Clean design, fast code, and creative tools.">
+    <meta name="twitter:image" content="https://ronnelmacompas-dev.vercel.app/assets/img/custom_og_img.png">
+
+    <title>Neru | Contacts</title>
+
+    <link rel="icon" type="image/x-icon" href="assets/icons/tabLogo.png " />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/contacts.css" />
+
+</head>
+<body onload="gfg_Run()">
+
+    <nav class="navbar">
+        <img src="assets/icons/mainLogo.png" height="28" alt="logo name neru" />
+        <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
+        <ul class="nav-links">
+            <li><a href="index.html" onclick="va('track', 'Home Clicked')">Home</a></li>
+            <li><a href="projects.html" onclick="va('track', 'Projects Clicked')">Projects</a></li>
+            <li><a href="skills.html" onclick="va('track', 'Skills Clicked')">Skills</a></li>
+            <!-- <li><a href="products.html" onclick="va('track', 'Store Clicked')">Products</a></li> -->
+            <li><a href="contacts.html" class="active" onclick="va('track', 'Contacts Clicked')">Contacts</a></li>
+        </ul>
+    </nav>
+
+    <section id="contacts">
+        <div class="contacts_contents">
+            <h1>Contacts</h1>
+            <br />
+            <hr />
+            <br />
+
+            <div class="grid-container_forContacts">
+                <div class="grid-item_forContacts">
+                    <h2>Email</h2>
+                    <p>ronnelmacompas@gmail.com</p>
+                </div>
+                <div class="grid-item_forContacts">
+                    <h2>Twitter / X</h2>
+                    <p>@ronnel_x214</p>
+                </div>
+                <div class="grid-item_forContacts">
+                    <h2>LinkedIn</h2>
+                    <p>in/ronnel-macompas/</p>
+                </div>
+                <div class="grid-item_forContacts">
+                    <h2>GitHub</h2>
+                    <p>github.com/expolite</p>
+                </div>
+                <div class="grid-item_forContacts">
+                    <h2>YouTube</h2>
+                    <p>@nerux214</p>
+                </div>
+            </div>
+            <br />
+            <hr />
+            <small>© 2023 - 2025 Ronnel Macompas. All rights reserved.</small>
+        </div>
+    </section>
+
+    <br><br>
+
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+
+    <!-- Web Analytics in Vercel - start -->
+    <script src="js/navbar.js"></script>
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <!-- Web Analytics in Vercel - end -->
+
+</body>
+</html>

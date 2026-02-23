@@ -1,0 +1,82 @@
+
+@font-face {
+    font-family: "Orbitron_regular";
+    src: url("../assets/fonts/Orbitron/Orbitron-Regular.ttf");
+}
+@font-face {
+    font-family: "Montserrat_medium";
+    src: url("../assets/fonts/Montserrat/static/Montserrat-Medium.ttf");
+}
+@font-face {
+    font-family: "Bruno-Ace_SC";
+    src: url("../assets/fonts/Bruno-Ace_SC/BrunoAceSC-Regular.ttf");
+}
+
+#store {
+    place-items: center;
+    padding-top: 50px;
+    display: grid;
+}
+#store h1 {
+    font-family: "Orbitron_regular";
+    font-size: clamp(20px, 6vw, 50px);
+    color: #38d1ef;
+    letter-spacing: 2px; 
+}
+.store_contents {
+    width: 80%;
+    /* border: 1px solid white; */
+}
+/* .products_item {
+    border: 3px dashed red;
+} */
+
+.container {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));   /* A responsive grid column setup in CSS Grid. */
+
+    gap: 20px;
+}
+.box {
+    border: 2px solid white;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 16px;
+}
+.box img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+.product_info {
+    margin-top: 15px;
+    text-align: left;
+}
+/* Product name */
+.product_info h3 {
+    font-family: "Montserrat_medium";
+}
+/* Price */
+.product_info p {
+    font-family: "Bruno-Ace_SC";
+    color: #38d1ef;
+}
+.product_info i {
+    margin-right: 7px;
+}
+.glow_border {
+    transition: 
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+.glow_border:hover {
+    border-color: #38d1ef;
+    box-shadow: 0 0 8px #38d1ef,
+                0 0 20px #38d1ef,
+                0 0 35px #38d1ef;
+}
+
+
+

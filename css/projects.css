@@ -76,10 +76,10 @@
     border-radius: .75rem;
 }
 .grid-item:hover .overlay {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 .text {
-    color: white;
+    color: #38d1ef;
     font-size: 20px;
     position: absolute;
     top: 50%;

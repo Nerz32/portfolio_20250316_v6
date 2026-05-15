@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Reaction Timer</title>
+
+  <meta name="description" content="Minimalist reaction timer game built to test reflex speed, reaction accuracy, and response consistency." />
+
+  <meta name="keywords" content="reaction timer, reflex test, reaction speed, browser game, reaction game, reflex checker, web game" />
+
+  <meta name="author" content="Ronnel Macompas" />
+
+  <meta name="theme-color" content="#f5f4f0" />
+
+  <meta property="og:title" content="Reaction Timer" />
+  <meta property="og:description" content="Minimalist reaction timer game for testing reflex speed and consistency." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Reaction Timer" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Reaction Timer" />
+  <meta name="twitter:description" content="Minimalist reaction timer game for testing reflex speed and consistency." />
+
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Reaction Timer</h1>
+
+    <div class="arena state-waiting" id="arena" onclick="handleClick()">
+      <div class="arena-label" id="lbl">Click anywhere to start</div>
+      <div class="arena-big" id="big">—</div>
+      <div class="arena-sub" id="sub">Test your reflexes</div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Best</div>
+        <div class="stat-val" id="stat-best">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Average</div>
+        <div class="stat-val" id="stat-avg">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Attempts</div>
+        <div class="stat-val" id="stat-count">0</div>
+      </div>
+    </div>
+
+    <div class="history-wrap" id="history-wrap" style="display:none">
+      <div class="history-title">Last 8 attempts</div>
+      <div class="bars" id="bars"></div>
+    </div>
+
+    <button class="reset-btn" onclick="resetAll()">Reset scores</button>
+    <div class="tip" id="tip">Click or tap anywhere on the colored box</div>
+
+    <footer class="footer">
+      <div class="footer-line"></div>
+
+      <div class="footer-content">
+        <span>Reaction Timer</span>
+        <span class="dot">•</span>
+        <span>Developed by Ronnel Macompas</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const arena = document.getElementById('arena');
+    const lbl = document.getElementById('lbl');
+    const big = document.getElementById('big');
+    const sub = document.getElementById('sub');
+    const statBest = document.getElementById('stat-best');
+    const statAvg = document.getElementById('stat-avg');
+    const statCount = document.getElementById('stat-count');
+    const barsEl = document.getElementById('bars');
+    const histWrap = document.getElementById('history-wrap');
+    const tip = document.getElementById('tip');
+
+    let state = 'waiting';
+    let timer = null;
+    let startTime = null;
+    let scores = [];
+
+    function setState(s, bigTxt, lblTxt, subTxt) {
+      state = s;
+      arena.className = 'arena state-' + s;
+      if (lblTxt !== undefined) lbl.textContent = lblTxt;
+      if (bigTxt !== undefined) big.innerHTML = bigTxt;
+      if (subTxt !== undefined) sub.textContent = subTxt;
+    }
+
+    function handleClick() {
+      if (state === 'waiting' || state === 'result' || state === 'early') {
+        startRound();
+      } else if (state === 'ready') {
+        clearTimeout(timer);
+        setState('early', 'Too early!', 'Not yet...', 'Wait for green — click to try again');
+        tip.textContent = 'Wait until the box turns green!';
+      } else if (state === 'go') {
+        const rt = Date.now() - startTime;
+        recordScore(rt);
+      }
+    }
+
+    function startRound() {
+      setState('ready', '...', 'Get ready', 'Wait for green');
+      tip.textContent = 'Click immediately when it turns green!';
+      const delay = 1500 + Math.random() * 2500;
+      timer = setTimeout(() => {
+        setState('go', 'NOW!', 'Click!', 'Click as fast as you can!');
+        startTime = Date.now();
+      }, delay);
+    }
+
+    function recordScore(ms) {
+      scores.push(ms);
+      const best = Math.min(...scores);
+      const avg = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
+
+      statBest.textContent = best + ' ms';
+      statAvg.textContent = avg + ' ms';
+      statCount.textContent = scores.length;
+
+      const rating = ms < 200 ? 'Incredible!' :
+        ms < 250 ? 'Excellent!' :
+          ms < 350 ? 'Great!' :
+            ms < 500 ? 'Not bad' : 'Keep practicing';
+
+      setState('result', ms + '<span class="unit">ms</span>', 'Your time', rating + ' — click to play again');
+      tip.textContent = (ms === best && scores.length > 1) ? 'New best score!' : 'Click anywhere to try again';
+      renderBars();
+      histWrap.style.display = 'block';
+    }
+
+    function renderBars() {
+      const last = scores.slice(-8);
+      const max = Math.max(...last);
+      const min = Math.min(...last);
+      barsEl.innerHTML = last.map(v => {
+        const pct = max === min ? 0.6 : 0.1 + 0.85 * (1 - (v - min) / (max - min));
+        const h = Math.round(pct * 46);
+        const best = v === min;
+        return `<div class="bar-col">
+          <div class="bar${best ? ' best' : ''}" style="height:${h}px"></div>
+          <div class="bar-num">${v}</div>
+        </div>`;
+      }).join('');
+    }
+
+    function resetAll() {
+      scores = [];
+      statBest.textContent = '—';
+      statAvg.textContent = '—';
+      statCount.textContent = '0';
+      histWrap.style.display = 'none';
+      clearTimeout(timer);
+      setState('waiting', '—', 'Click anywhere to start', 'Test your reflexes');
+      tip.textContent = 'Click or tap anywhere on the colored box';
+    }
+  </script>
+</body>
+</html>

@@ -100,6 +100,13 @@
     font-size: 16px;
 }
 
+.img_size {
+    width: 100%;
+    height: 320px; /* Adjust this height to match your design preferred look */
+    object-fit: cover; /* Prevents stretching by cropping edges if aspect ratios mismatch */
+    object-position: top center; /* Keeps the most important part of web previews (the header) visible */
+}
+
 /* 🔥 Responsive Design 🔥 */
 @media (max-width: 700px) {
     .grid-container {

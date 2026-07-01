@@ -1,101 +1,294 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
+<!--
+==================================================
+    Website: Portfolio Website
+    Created by: Ronnel Macompas
+    Year: 2026
+    Note: I use this if website/page still under maintenance.
+==================================================
+-->
+
 <head>
-
-    <meta charset="UTF-8" />
-    <meta name="author" content="Ronnel Macompas" />
-    <meta name="description" content="Ronnel Macompas is a programmer and web developer based in the Philippines, building responsive websites, web apps, and software using C++, Python, HTML, CSS, JavaScript, SQL, PHP, and more." />
-    <meta name="keywords" content="web development, web developer, portfolio, freelancer, neru web developer, neru developer"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <meta property="og:title" content="Neru Tokisaki | Programmer & Web Developer" />
-    <meta property="og:description" content="Hi, I'm Ronnel Macompas, a passionate programmer from the Philippines specializing in web development, automation tools, and software built with C++, Python, HTML, CSS, JavaScript, SQL, PHPand more." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://ronnelmacompas-dev.vercel.app/assets/img/custom_og_img.png" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Neru Tokisaki | Programmer & Web Developer">
-    <meta name="twitter:description" content="Hi, I'm Ronnel Macompas, a passionate programmer from the Philippines specializing in web development, automation tools, and software built with C++, Python, HTML, CSS, JavaScript, SQL, PHPand more.">
-    <meta name="twitter:image" content="https://ronnelmacompas-dev.vercel.app/assets/img/custom_og_img.png">
-    <meta name="twitter:site" content="@ronnel_x214">
-
-    <title>Neru | Home</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/icons/tabLogo.png " />
-    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/navbar.css" />
-    <link rel="stylesheet" href="css/home.css" />
+    <title>Under Maintenance — Neru</title>
+    <style>
+        :root {
+            --cyan: #38d1ef;
+            --cyan-dim: rgba(56, 209, 239, 0.35);
+            --black: #141414;
+            --black-2: #1b1b1b;
+            --grey: #8a8f92;
+        }
 
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: var(--black);
+            color: #eaeaea;
+            font-family: 'Courier New', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+            overflow: hidden;
+        }
+
+        /* faint grid backdrop, echoes a dev workspace */
+        .grid-bg {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(56, 209, 239, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56, 209, 239, 0.05) 1px, transparent 1px);
+            background-size: 48px 48px;
+            z-index: 0;
+        }
+
+        /* slow scanning line, single deliberate motion */
+        .scanline {
+            position: fixed;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to bottom, transparent, rgba(56, 209, 239, 0.05), transparent);
+            animation: scan 8s linear infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            0% {
+                top: -120px;
+            }
+
+            100% {
+                top: 100%;
+            }
+        }
+
+        .wrap {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: var(--cyan);
+            margin-bottom: 56px;
+            opacity: 0.9;
+        }
+
+        .status-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border: 1px solid var(--cyan-dim);
+            border-radius: 3px;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--cyan);
+            margin-bottom: 32px;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--cyan);
+            animation: pulse 1.8s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                box-shadow: 0 0 0 0 var(--cyan-dim);
+            }
+
+            50% {
+                opacity: 0.4;
+                box-shadow: 0 0 0 6px transparent;
+            }
+        }
+
+        h1 {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin: 0 0 18px 0;
+            color: #fff;
+        }
+
+        h1 .accent {
+            color: var(--cyan);
+        }
+
+        .desc {
+            max-width: 480px;
+            color: var(--grey);
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 0 0 40px 0;
+        }
+
+        /* terminal-style progress readout, on-brand for an engineer's site */
+        .console {
+            width: 100%;
+            max-width: 420px;
+            text-align: left;
+            background: var(--black-2);
+            border: 1px solid rgba(56, 209, 239, 0.15);
+            border-radius: 6px;
+            padding: 16px 18px;
+            font-size: 12px;
+            line-height: 1.9;
+            color: var(--grey);
+        }
+
+        .console .line {
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .console .ok {
+            color: var(--cyan);
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 7px;
+            height: 13px;
+            background: var(--cyan);
+            margin-left: 4px;
+            vertical-align: middle;
+            animation: blink 1s steps(1) infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .bar-track {
+            margin-top: 10px;
+            height: 4px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--cyan);
+            border-radius: 2px;
+            animation: fill 6s ease-in-out infinite;
+        }
+
+        @keyframes fill {
+            0% {
+                width: 6%;
+            }
+
+            50% {
+                width: 78%;
+            }
+
+            100% {
+                width: 6%;
+            }
+        }
+
+        .footer {
+            margin-top: 44px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: #5a5f61;
+        }
+
+        .footer a {
+            color: var(--grey);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .footer a:hover {
+            color: var(--cyan);
+            border-color: var(--cyan-dim);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .scanline,
+            .status-dot,
+            .cursor,
+            .bar-fill {
+                animation: none;
+            }
+        }
+
+        @media (max-width:480px) {
+            .console {
+                font-size: 11px;
+                padding: 14px;
+            }
+        }
+    </style>
 </head>
-<body onload="gfg_Run()">
 
-    <nav class="navbar">
-        <img src="assets/icons/mainLogo.png" height="28" alt="logo name neru" />
-        <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active" onclick="va('track', 'Home Clicked')">Home</a></li>
-            <li><a href="projects.html" onclick="va('track', 'Projects Clicked')">Projects</a></li>
-            <li><a href="skills.html" onclick="va('track', 'Skills Clicked')">Skills</a></li>
-            <!-- <li><a href="products.html" onclick="va('track', 'Store Clicked')">Products</a></li> -->
-            <li><a href="contacts.html" onclick="va('track', 'Contacts Clicked')">Contacts</a></li>
-        </ul>
-    </nav>
+<body>
 
-    <section id="home">
-        <div class="home_contents">
-            <h1>
-                Hello, I'm Neru. <br />
-                Programmer.
-            </h1>
-            <br />
-            <p>
-                I build and write code passionate on my daily basis.
-                <br class="home_br_1" />
-                From a hobby building a simple program can be a great step to the
-                future. <br class="home_br_2" />
-                Together, let's begin on an exciting journey through the world of web
-                development and programming.
-            </p>
+    <div class="grid-bg"></div>
+    <div class="scanline"></div>
 
-            <br /><br />
-            <hr />
-            <br /><br />
+    <div class="wrap">
+        <div class="logo">&lt;// NERU //&gt;</div>
 
-            <ul class="about_list">
-                <li>
-                    <span style="color: #38d1ef">Hi, I’m Ronnel Macompas</span>, a programmer based in the Philippines.
-                </li>
-                <li>
-                    I began my coding journey in senior high school back in 2017, working with <span style="color: #38d1ef">C++, Visual Basic,</span> and learning the fundamentals of <span style="color: #38d1ef">computer hardware.</span>
-                </li>
-                <li>
-                    In college, my skills expanded into <span style="color: #38d1ef">C++, Python, networking, and web development—including HTML, CSS, JavaScript, SQL, and PHP</span>—with much of my growth driven by self-learning beyond the classroom.
-                </li>
-                <li>
-                    My passion lies in <span style="color: #38d1ef">turning ideas into reality through code.</span> I pour my time and dedication into building programs that are <span style="color: #38d1ef">functional, efficient, and purposeful.</span>
-                </li>
-                <li>
-                    This dedication to creating and problem-solving fuels my continuous growth, as I strive to deliver <span style="color: #38d1ef">impactful and innovative software solutions.</span>
-                </li>
-            </ul>
+        <div class="status-tag">
+            <span class="status-dot"></span>
+            System offline
         </div>
-    </section>
 
-    <br><br>
+        <h1>Under <span class="accent">maintenance</span></h1>
+        <p class="desc">
+            This site is being rebuilt behind the scenes. It isn't available right now —
+            check back soon while the work finishes up.
+        </p>
 
-    <script src="js/main.js"></script>
-    <script src="js/navbar.js"></script>
+        <div class="console">
+            <div class="line">$ deploy --status</div>
+            <div class="line ok">&gt; taking site offline for updates<span class="cursor"></span></div>
+            <div class="bar-track">
+                <div class="bar-fill"></div>
+            </div>
+        </div>
 
-    <!-- Web Analytics in Vercel - start -->
-    <script src="js/navbar.js"></script>
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
-    <!-- Web Analytics in Vercel - end -->
+        <div class="footer">
+            Questions? reach out on <a href="https://instagram.com/" target="_blank" rel="noopener">ronnelmacompas@gmail.com</a>
+        </div>
+    </div>
 
 </body>
+
 </html>

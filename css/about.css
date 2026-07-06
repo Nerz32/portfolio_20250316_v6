@@ -1,0 +1,66 @@
+
+/* ── ABOUT ── */
+#about {
+    background: var(--bg-deep);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+.about-text p {
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+    font-size: 1.02rem;
+    line-height: 1.85;
+}
+
+.about-text p strong {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.about-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.highlight-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2rem 1.4rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.highlight-card:hover {
+    border-color: var(--cyan);
+    transform: translateX(4px);
+}
+
+.highlight-icon {
+    font-size: 1.4rem;
+    width: 40px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.highlight-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.2rem;
+}
+
+.highlight-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.5;
+}

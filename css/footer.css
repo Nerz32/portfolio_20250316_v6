@@ -1,0 +1,25 @@
+
+/* ── FOOTER ── */
+footer {
+    background: var(--bg-deep);
+    border-top: 1px solid var(--border);
+    padding: 2rem 6vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-logo {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.85rem;
+    color: var(--cyan);
+}
+
+.footer-copy {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+}

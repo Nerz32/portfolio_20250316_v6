@@ -1,63 +1,61 @@
 
-@font-face {
-    font-family: "Prompt_regular";
-    src: url("../assets/fonts/Prompt/Prompt-Regular.ttf");
+/* ── NAV ── */
+nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 6vw;
+    height: 64px;
+    background: rgba(13,13,13,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
 }
 
-.navbar {
-    /* border: 1px solid white; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    color: white;
-    width: 100%;
-    /* horizon, vertical, blur, color, radius */
-    box-shadow: 0px 10px 45px 5px rgba(255, 255, 255, 0.1);
-}
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-.nav-links li {
-    margin: 0 10px;
-}
-.nav-links a {
-    color: white;
-    font-family: "Prompt_regular";
+.nav-logo {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--cyan);
+    letter-spacing: 0.05em;
     text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
 }
-.nav-links a:hover {
-    color: #38d1ef;
+
+.nav-links {
+    display: flex; gap: 2.4rem; list-style: none;
 }
-.nav-links a.active {
-    color: #38d1ef;
+
+.nav-links a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
 }
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
+
+.nav-links a::after {
+    content: '';
+    position: absolute; bottom: -3px; left: 0; right: 0;
+    height: 1px; background: var(--cyan);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.25s ease;
 }
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 50px;
-        right: 0;
-        width: 100%;
-        text-align: right;
-        padding-right: 20px;
-        background: #333;
-        font-size: 18px;
-        z-index: 2;
-    }
-    .nav-links.active {
-        display: flex;
-    }
-    .menu-toggle {
-        display: block;
-    }
+
+.nav-links a:hover { color: var(--cyan); }
+.nav-links a:hover::after { transform: scaleX(1); }
+
+.nav-cta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+    padding: 0.4rem 1rem;
+    border-radius: 3px;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background 0.2s, color 0.2s;
 }
+
+.nav-cta:hover { background: var(--cyan); color: var(--bg-deep); }

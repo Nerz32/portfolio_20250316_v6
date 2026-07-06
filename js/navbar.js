@@ -1,12 +1,16 @@
 
-// Navbar : Menu Toggle
-function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-}
+// Active nav highlight on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
 
-// Navbar : Active link on
-function setActive(element) {
-    document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
-    element.classList.add('active');
-}
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--cyan)' : '';
+    });
+    
+}, { passive: true });

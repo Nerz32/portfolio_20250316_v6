@@ -1,313 +1,383 @@
+<!--
+====================================================
+    Portfolio Website
+    Author  : Ronnel Macompas
+    Created : 2022
+    Updated : 2026
+====================================================
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
-<!--
-==================================================
-    Website: Portfolio Website
-    Created by: Ronnel Macompas
-    Year: 2026
-    Note: I use this if website/page still under maintenance.
-==================================================
--->
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="assets/icons/tabLogo.png " />
-    <title>Under Maintenance — Neru</title>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ronnel Macompas — Software Engineer</title>
 
     <meta name="author" content="Ronnel Macompas" />
-    <meta name="description" content="Ronnel Macompas is a programmer and web developer based in the Philippines, building responsive websites, web apps, and software using C++, Python, HTML, CSS, JavaScript, SQL, PHP, and more." />
-    <meta name="keywords" content="web development, web developer, portfolio, freelancer, neru web developer, neru developer"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="I build software at the intersection of games and the web — 2+ years shipping C++ in a professional game studio, with a genuine love for crafting clean, fast web experiences on the side." />
+    <meta name="keywords"
+        content="Game Software Engineer, C++ Developer, Software Engineer, Web Developer, Portfolio, HTML, CSS, JavaScript, C++, PHP, SQL, Performance Optimization, Debugging, Software Development" />
 
-    <meta property="og:title" content="Neru Tokisaki | Programmer & Web Developer" />
-    <meta property="og:description" content="Hi, I'm Ronnel Macompas, a passionate programmer from the Philippines specializing in web development, automation tools, and software built with C++, Python, HTML, CSS, JavaScript, SQL, PHPand more." />
+    <meta property="og:title" content="Ronnel Macompas — Software Engineer" />
+    <meta property="og:description"
+        content="I build software at the intersection of games and the web — 2+ years shipping C++ in a professional game studio, with a genuine love for crafting clean, fast web experiences on the side." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://ronnelmacompas-dev.vercel.app/assets/img/custom_og_img.png" />
+    <!-- <meta property="og:image" content="https://ronnelmacompas-dev.vercel.app/assets/img/custom_og_img.png" /> -->
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Neru Tokisaki | Programmer & Web Developer">
-    <meta name="twitter:description" content="Hi, I'm Ronnel Macompas, a passionate programmer from the Philippines specializing in web development, automation tools, and software built with C++, Python, HTML, CSS, JavaScript, SQL, PHPand more.">
-    <meta name="twitter:image" content="https://ronnelmacompas-dev.vercel.app/assets/img/custom_og_img.png">
+    <meta name="twitter:title" content="Ronnel Macompas — Software Engineer">
+    <meta name="twitter:description"
+        content="I build software at the intersection of games and the web — 2+ years shipping C++ in a professional game studio, with a genuine love for crafting clean, fast web experiences on the side.">
+    <!-- <meta name="twitter:image" content="https://ronnelmacompas-dev.vercel.app/assets/img/custom_og_img.png"> -->
     <meta name="twitter:site" content="@ronnel_x214">
 
+    <link rel="stylesheet" href="assets/fontawesome-free-7.2.0-web/css/all.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/contacts.css">
+    <link rel="stylesheet" href="css/footer.css">
 
-    <style>
-        :root {
-            --cyan: #38d1ef;
-            --cyan-dim: rgba(56, 209, 239, 0.35);
-            --black: #141414;
-            --black-2: #1b1b1b;
-            --grey: #8a8f92;
-        }
+    <link rel="stylesheet" href="css/bottom_style.css">
 
-        * {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background: var(--black);
-            color: #eaeaea;
-            font-family: 'Courier New', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-            overflow: hidden;
-        }
-
-        /* faint grid backdrop, echoes a dev workspace */
-        .grid-bg {
-            position: fixed;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(56, 209, 239, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(56, 209, 239, 0.05) 1px, transparent 1px);
-            background-size: 48px 48px;
-            z-index: 0;
-        }
-
-        /* slow scanning line, single deliberate motion */
-        .scanline {
-            position: fixed;
-            left: 0;
-            right: 0;
-            height: 120px;
-            background: linear-gradient(to bottom, transparent, rgba(56, 209, 239, 0.05), transparent);
-            animation: scan 8s linear infinite;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        @keyframes scan {
-            0% {
-                top: -120px;
-            }
-
-            100% {
-                top: 100%;
-            }
-        }
-
-        .wrap {
-            position: relative;
-            z-index: 2;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-            text-align: center;
-        }
-
-        .logo {
-            font-size: 14px;
-            letter-spacing: 2px;
-            color: var(--cyan);
-            margin-bottom: 56px;
-            opacity: 0.9;
-        }
-
-        .status-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 14px;
-            border: 1px solid var(--cyan-dim);
-            border-radius: 3px;
-            font-size: 11px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--cyan);
-            margin-bottom: 32px;
-        }
-
-        .status-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--cyan);
-            animation: pulse 1.8s ease-in-out infinite;
-            flex-shrink: 0;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-                box-shadow: 0 0 0 0 var(--cyan-dim);
-            }
-
-            50% {
-                opacity: 0.4;
-                box-shadow: 0 0 0 6px transparent;
-            }
-        }
-
-        h1 {
-            font-size: clamp(28px, 5vw, 48px);
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin: 0 0 18px 0;
-            color: #fff;
-        }
-
-        h1 .accent {
-            color: var(--cyan);
-        }
-
-        .desc {
-            max-width: 480px;
-            color: var(--grey);
-            font-size: 14px;
-            line-height: 1.7;
-            margin: 0 0 40px 0;
-        }
-
-        /* terminal-style progress readout, on-brand for an engineer's site */
-        .console {
-            width: 100%;
-            max-width: 420px;
-            text-align: left;
-            background: var(--black-2);
-            border: 1px solid rgba(56, 209, 239, 0.15);
-            border-radius: 6px;
-            padding: 16px 18px;
-            font-size: 12px;
-            line-height: 1.9;
-            color: var(--grey);
-        }
-
-        .console .line {
-            white-space: nowrap;
-            overflow: hidden;
-        }
-
-        .console .ok {
-            color: var(--cyan);
-        }
-
-        .cursor {
-            display: inline-block;
-            width: 7px;
-            height: 13px;
-            background: var(--cyan);
-            margin-left: 4px;
-            vertical-align: middle;
-            animation: blink 1s steps(1) infinite;
-        }
-
-        @keyframes blink {
-            50% {
-                opacity: 0;
-            }
-        }
-
-        .bar-track {
-            margin-top: 10px;
-            height: 4px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 2px;
-            overflow: hidden;
-        }
-
-        .bar-fill {
-            height: 100%;
-            width: 0%;
-            background: var(--cyan);
-            border-radius: 2px;
-            animation: fill 6s ease-in-out infinite;
-        }
-
-        @keyframes fill {
-            0% {
-                width: 6%;
-            }
-
-            50% {
-                width: 78%;
-            }
-
-            100% {
-                width: 6%;
-            }
-        }
-
-        .footer {
-            margin-top: 44px;
-            font-size: 11px;
-            letter-spacing: 1px;
-            color: #5a5f61;
-        }
-
-        .footer a {
-            color: var(--grey);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: color 0.2s ease, border-color 0.2s ease;
-        }
-
-        .footer a:hover {
-            color: var(--cyan);
-            border-color: var(--cyan-dim);
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-
-            .scanline,
-            .status-dot,
-            .cursor,
-            .bar-fill {
-                animation: none;
-            }
-        }
-
-        @media (max-width:480px) {
-            .console {
-                font-size: 11px;
-                padding: 14px;
-            }
-        }
-    </style>
+    <link rel="icon" type="image/x-icon" href="assets/img/favIcon.png" />
 </head>
 
 <body>
 
-    <div class="grid-bg"></div>
-    <div class="scanline"></div>
+    <!-- NAV -->
+    <nav>
+        <a href="#hero" class="nav-logo">&lt;// NERU //&gt;</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="mailto:ronnelmacompas@email.com" class="nav-cta"><del>Hire Me</del></a>
+    </nav>
 
-    <div class="wrap">
-        <div class="logo">&lt;// NERU //&gt;</div>
+    <!-- ####################################################################################################################################### -->
 
-        <div class="status-tag">
-            <span class="status-dot"></span>
-            System offline
-        </div>
+    <!-- ####################################################################################################################################### -->
 
-        <h1>Under <span class="accent">maintenance</span></h1>
-        <p class="desc">
-            This site is being rebuilt behind the scenes. It isn't available right now —
-            check back soon while the work finishes up.
-        </p>
-
-        <div class="console">
-            <div class="line">$ deploy --status</div>
-            <div class="line ok">&gt; taking site offline for updates<span class="cursor"></span></div>
-            <div class="bar-track">
-                <div class="bar-fill"></div>
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow">Available for work</p>
+            <h1 class="hero-name">Ronnel<br>Macompas</h1>
+            <div class="hero-role">
+                <span id="typed-role">Game Software Engineer</span><span class="cursor"></span>
+            </div>
+            <p class="hero-desc">
+                I build software at the intersection of games and the web — 2+ years shipping C++ in a professional
+                game studio, with a genuine love for crafting clean, fast web experiences on the side.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-ghost">Get in Touch</a>
+            </div>
+            <div class="hero-stats">
+                <div>
+                    <div class="stat-num">2+</div>
+                    <div class="stat-label">Years Professional XP</div>
+                </div>
+                <div>
+                    <div class="stat-num">C++</div>
+                    <div class="stat-label">Primary Game Engine Lang</div>
+                </div>
+                <div>
+                    <div class="stat-num">5+</div>
+                    <div class="stat-label">Technologies</div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="footer">
-            Questions? reach out on <a href="https://instagram.com/" target="_blank" rel="noopener">ronnelmacompas@gmail.com</a>
+    <!-- ####################################################################################################################################### -->
+
+    <!-- ####################################################################################################################################### -->
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="about-grid">
+            <div class="about-text fade-up">
+                <div class="section-label">About</div>
+                <h2 class="section-title">Engineer by trade,<br>builder by nature.</h2>
+                <p>I spent <strong>2+ years as a Game Software Engineer</strong>, deep in C++ — debugging complex
+                    systems, tracking down elusive bugs, and optimizing performance under pressure. That experience
+                    taught me how to think rigorously about code that actually has to run.</p>
+                <p>Outside the studio, I <strong>build websites as a craft</strong>. Not templates — real,
+                    hand-written HTML, CSS, and JavaScript. I care about the details that most people skip.</p>
+                <p>I'm also the person people call when hardware stops working. If it has a circuit board or a plug,
+                    I've probably fixed one. When I'm not in front of a screen, I'm shooting photos or watching
+                    anime.</p>
+            </div>
+            <div class="about-highlights fade-up">
+                <div class="highlight-card">
+                    <div class="highlight-icon"><i class="fa-solid fa-gamepad"></i></div>
+                    <div>
+                        <div class="highlight-title">Game Industry — 2+ Years</div>
+                        <div class="highlight-desc">Professional C++ development: debugging, troubleshooting, and
+                            testing within a real game studio pipeline.</div>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon"><i class="fa-solid fa-globe"></i></div>
+                    <div>
+                        <div class="highlight-title">Web Development</div>
+                        <div class="highlight-desc">HTML, CSS, JavaScript, PHP, and SQL — full-stack web projects
+                            built from scratch as a genuine passion.</div>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <div>
+                        <div class="highlight-title">Hardware & Repair</div>
+                        <div class="highlight-desc">Diagnosing and fixing hardware faults — from computers to
+                            appliances. Practical, hands-on problem solving.</div>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon"><i class="fa-regular fa-camera"></i></div>
+                    <div>
+                        <div class="highlight-title">Photography & Anime</div>
+                        <div class="highlight-desc">An eye for composition developed through photography, shared on
+                            Instagram. Fuelled by a love of anime storytelling.</div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- ####################################################################################################################################### -->
+
+    <!-- ####################################################################################################################################### -->
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="section-label">Skills</div>
+        <h2 class="section-title">Tech I work with.</h2>
+        <div class="skills-grid">
+            <div class="skill-group fade-up">
+                <div class="skill-group-title">// Languages</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag secondary">Python</span>
+                    <span class="skill-tag secondary">Bash(.sh)</span>
+                </div>
+            </div>
+            <div class="skill-group fade-up">
+                <div class="skill-group-title">// Game Dev</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">C++ Game Systems</span>
+                    <span class="skill-tag">Debugging</span>
+                    <span class="skill-tag">Troubleshooting</span>
+                    <span class="skill-tag">QA &amp; Testing</span>
+                    <span class="skill-tag">Performance Profiling</span>
+                </div>
+            </div>
+            <div class="skill-group fade-up">
+                <div class="skill-group-title">// Web</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">PHP Backend</span>
+                    <span class="skill-tag">Responsive Design</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Vercel</span>
+                    <span class="skill-tag secondary">SEO</span>
+                    <span class="skill-tag secondary">Bootstrap</span>
+                </div>
+            </div>
+            <div class="skill-group fade-up">
+                <div class="skill-group-title">// Hardware & Other</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Hardware Diagnosis</span>
+                    <span class="skill-tag">Appliance Repair</span>
+                    <span class="skill-tag">Technical Support</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag secondary">Photography</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ####################################################################################################################################### -->
+
+    <!-- ####################################################################################################################################### -->
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="section-label">Projects</div>
+        <h2 class="section-title">Things I've built.</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-up">
+                <div class="project-type">// Web Project</div>
+                <div class="project-title">Personal Portfolio</div>
+                <p class="project-desc">This site — a handcrafted portfolio built without frameworks. Focused on
+                    performance, clean markup, and a distinctive visual identity that reflects my style as a
+                    developer.</p>
+                <div class="project-stack">
+                    <span class="stack-pill">HTML</span>
+                    <span class="stack-pill">CSS</span>
+                    <span class="stack-pill">JavaScript</span>
+                </div>
+            </div>
+            <div class="project-card fade-up">
+                <div class="project-type">// Game Dev</div>
+                <div class="project-title">C++ Game Systems</div>
+                <p class="project-desc">2+ years of professional C++ work in a game studio: debugging complex
+                    gameplay systems, performing QA testing, investigating reported issues, and resolving critical
+                    runtime issues under
+                    tight deadlines.</p>
+                <div class="project-stack">
+                    <span class="stack-pill">C++</span>
+                    <span class="stack-pill">Debugging</span>
+                    <span class="stack-pill">Game Engine</span>
+                </div>
+            </div>
+            <div class="project-card fade-up">
+                <div class="project-type">// Web Project</div>
+                <div class="project-title">PHP Web Application</div>
+                <p class="project-desc">A full-stack web app built with PHP and MySQL — user authentication,
+                    database-driven content, and a responsive front end. Built entirely from scratch as a hobby
+                    project.</p>
+                <div class="project-stack">
+                    <span class="stack-pill">PHP</span>
+                    <span class="stack-pill">MySQL</span>
+                    <span class="stack-pill">HTML/CSS</span>
+                    <span class="stack-pill">JavaScript</span>
+                </div>
+            </div>
+        </div>
+        <p style="margin-top:2rem; font-size:0.85rem; color:var(--muted); font-family:'JetBrains Mono',monospace;">
+            // More projects coming soon — reach out to see what I've been working on.
+        </p>
+    </section>
+
+    <!-- ####################################################################################################################################### -->
+
+    <!-- ####################################################################################################################################### -->
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="contact-wrapper">
+            <div class="contact-intro fade-up">
+                <div class="section-label">Contact</div>
+                <h2 class="section-title">Let's work<br>together.</h2>
+                <p><del>I'm open</del> to full-time roles, contract work, and interesting side projects — especially
+                    anything
+                    at the intersection of software engineering, game dev, or the web.</p>
+                <div class="contact-links">
+                    <a href="mailto:ronnelmacompas@email.com" class="contact-link">
+                        <span class="contact-link-icon"><i class="fa-regular fa-envelope"></i></span>
+                        <div>
+                            <div class="contact-link-label">Email</div>
+                            <div class="contact-link-val">ronnelmacompas@email.com</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Expolite" target="_blank" class="contact-link">
+                        <span class="contact-link-icon"><i class="fa-brands fa-github"></i></span>
+                        <div>
+                            <div class="contact-link-label">GitHub</div>
+                            <div class="contact-link-val">github.com/Expolite</div>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/nerux214?igsh=Y2plaHBtYW8zZThv" target="_blank"
+                        class="contact-link">
+                        <span class="contact-link-icon"><i class="fa-regular fa-camera"></i></span>
+                        <div>
+                            <div class="contact-link-label">Instagram</div>
+                            <div class="contact-link-val">@nerux214 — Photography</div>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ronnel-macompas/" target="_blank" class="contact-link">
+                        <span class="contact-link-icon"><i class="fa-solid fa-briefcase"></i></span>
+                        <div>
+                            <div class="contact-link-label">LinkedIn</div>
+                            <div class="contact-link-val">Ronnel Macompas</div>
+                        </div>
+                    </a>
+                    <a href="https://x.com/ronnel_x214" target="_blank" class="contact-link">
+                        <span class="contact-link-icon"><i class="fa-brands fa-x-twitter"></i></span>
+                        <div>
+                            <div class="contact-link-label">X (Twitter)</div>
+                            <div class="contact-link-val">Ronnel Macompas — Development updates & projects</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="fade-up">
+                <form action="https://formspree.io/f/mbdvzdwe" method="POST" class="contact-form"
+                    onsubmit="handleSubmit(event)">
+                    <!-- <form action="https://formspree.io/f/mbdvzdwe" method="POST" class="contact-form"> -->
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label>Name</label>
+                            <input type="text" name="name" placeholder="Your name" required />
+                        </div>
+                        <div class="form-field">
+                            <label>Email</label>
+                            <input type="email" name="email" placeholder="your@email.com" required />
+                        </div>
+                    </div>
+                    <!-- <div class="form-field">
+                            <label>Subject</label>
+                            <input type="text" name="subject" placeholder="Job opportunity / Project" required />
+                        </div> -->
+                    <div class="form-field">
+                        <label>Message</label>
+                        <textarea name="message" placeholder="Tell me about the role or project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary"
+                        style="align-self:flex-start; border:none; cursor:pointer;">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ####################################################################################################################################### -->
+
+    <!-- ####################################################################################################################################### -->
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">&lt;// NERU //&gt;</div>
+        <div class="footer-copy">© 2022–2026 Designed & Developed by Ronnel Macompas.</div>
+    </footer>
+
+    <!-- Form Sphere -->
+    <script>
+        window.formspree =
+            window.formspree ||
+            function () {
+                (formspree.q = formspree.q || []).push(arguments);
+            };
+        formspree("initForm", {
+            formElement: "#my-form",
+            formId: "mbdvzdwe",
+        });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+
+    <script src="js/hero.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
 
     <!-- Web Analytics in Vercel - start -->
     <script src="js/navbar.js"></script>

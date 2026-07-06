@@ -1,0 +1,180 @@
+
+/* ── HERO ── */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 6vw;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle grid background */                
+#hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(56, 209, 239, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 209, 239, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+}
+
+/* Glow orb */
+#hero::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(56, 209, 239, 0.07) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+}
+
+.hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--cyan);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.hero-eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--cyan);
+}
+
+.hero-name {
+    font-family: 'Orbitron', monospace;
+    /* font-weight: 900; */
+    font-weight: 400;
+    font-size: clamp(2.6rem, 6vw, 4.8rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.hero-role {
+    font-family: 'Orbitron', monospace;
+    font-weight: 400;
+    font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+    color: var(--cyan);
+    margin-bottom: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1.1em;
+    background: var(--cyan);
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1
+    }
+
+    50% {
+        opacity: 0
+    }
+}
+
+.hero-desc {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--cyan);
+    color: var(--bg-deep);
+    padding: 0.75rem 1.8rem;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: box-shadow 0.25s, transform 0.15s;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 24px var(--cyan-glow);
+    transform: translateY(-1px);
+}
+
+.btn-ghost {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--text);
+    padding: 0.75rem 1.8rem;
+    border-radius: 3px;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-ghost:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+/* Hero stat strip */
+.hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.stat-num {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--cyan);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-top: 0.3rem;
+}

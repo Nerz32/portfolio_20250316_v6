@@ -45,6 +45,9 @@ nav {
 .nav-links a:hover { color: var(--cyan); }
 .nav-links a:hover::after { transform: scaleX(1); }
 
+.nav-links a.active { color: var(--cyan); }
+.nav-links a:hover::after { transform: scaleX(1); }
+
 .nav-cta {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;

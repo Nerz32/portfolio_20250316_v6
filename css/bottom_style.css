@@ -2,7 +2,7 @@
 /* ── SCROLL FADE ANIMATIONS ── */
 .fade-up {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
